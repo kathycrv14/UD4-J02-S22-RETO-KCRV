@@ -1,0 +1,29 @@
+<section class="sectionGeneral">
+    <section class="sectionForm">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h2>Login</h2>
+            <section class="form-group">
+                <label>Username:</label>                                   <!-- el border color sera rojo cuando el                 v                       sino   como esta inicialmente -->
+                <input type="text" formControlName="username" class="form-control" [ngStyle]="{'border-color': username?.invalid && username?.touched ? 'red' : 'initial'}">
+                <section *ngIf="username?.invalid && username?.touched">
+                    <section class="text-danger">
+                        Username is required
+                    </section>
+                </section>
+            </section>
+            <section class="form-group">
+                <label>Password:</label>
+                <input type="password" formControlName="password" class="form-control" [ngStyle]="{'border-color': password?.invalid && password?.touched ? 'red' : 'initial'}">
+                <section *ngIf="password?.invalid && password?.touched">
+                    <section class="text-danger">
+                        Password is required
+                    </section>
+                </section>
+            </section>
+            <section class="form-group sectionBotones">
+                <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>
+            </section>
+        </form>
+    </section>    
+</section>
+

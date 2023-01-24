@@ -1,0 +1,48 @@
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.sectionForm{
+    width: 30%;
+
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 3rem;
+
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1rem;
+    padding: 1rem;
+}
+
+.form-group{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.sectionBotones{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.btn{
+    border: none;
+}
+
+.btn:hover{
+    background-color: rgb(255, 183, 2);
+    font-weight: bolder;
+}
