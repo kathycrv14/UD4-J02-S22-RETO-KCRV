@@ -7,10 +7,10 @@ import { RegistrarComponent } from './principal/registrar/registrar.component';
 import { VistaComponent } from './principal/vista/vista.component';
 
 const routes: Routes = [
-  {path: 'vista', component: VistaComponent, canActivate: [CanactivateGuard]},
+  {path: 'vista', component: VistaComponent,canActivate : [CanactivateGuard]},
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent, canDeactivate: [CandesactivateGuard]},
-  {path: 'registro', component: RegistrarComponent, canDeactivate: [CandesactivateGuard]},
+  {path: 'registro', component: RegistrarComponent,canActivate : [CanactivateGuard], canDeactivate: [CandesactivateGuard]},
 
   {path: '**', redirectTo: '/login' },
 ];

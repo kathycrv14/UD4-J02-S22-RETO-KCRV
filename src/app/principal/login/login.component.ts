@@ -12,7 +12,9 @@ import { AutenticacionService } from 'src/app/services/autenticacion.service';
 export class LoginComponent {
 
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { 
+  
+  redireccion = '';
+  constructor(private formBuilder: FormBuilder,private router: Router,public autenticacion: AutenticacionService) { 
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -34,5 +36,9 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return;
     }
+    this.autenticacion.login();
+    this.redireccion = this.autenticacion.urlUsuarioIntentaAcceder;
+    this.autenticacion.urlUsuarioIntentaAcceder = '';
+    this.router.navigate(['registro']);
   }
 }

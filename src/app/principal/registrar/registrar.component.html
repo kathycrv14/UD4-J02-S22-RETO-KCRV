@@ -5,7 +5,7 @@
             <!--Firstname-->
             <section class="form-group">
                 <label for="username">Firstname:</label>
-                <input type="text" class="form-control" id="firstname" formControlName="firstname" required pattern="[a-zA-Z]+" maxlength="{a-z}" [(ngModel)]="mensaje">
+                <input type="text" class="form-control" id="firstname" formControlName="firstname" required pattern="[a-zA-Z]+" maxlength="{a-z}" >
                     <section *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)">
                         <section *ngIf="firstname?.errors?.['required']" class="alert alert-danger">
                             <p>El firstname es obligatorio</p>
@@ -15,7 +15,7 @@
             <!--Lastname-->
             <section class="form-group">
                 <label for="password">Lastname:</label>
-                <input type="text" class="form-control" id="lastname" formControlName="lastname" required pattern="[a-zA-Z]+" maxlength="{a-z}" [(ngModel)]="mensaje1">
+                <input type="text" class="form-control" id="lastname" formControlName="lastname" required pattern="[a-zA-Z]+" maxlength="{a-z}" >
                     <section *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
                         <section *ngIf="lastname?.errors?.['required']" class="alert alert-danger">
                             <p>El lastname es obligatorio</p>
@@ -25,7 +25,7 @@
             <!--Username-->
             <section class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" formControlName="username" required pattern="[a-zA-Z]+" maxlength="{a-z}" [(ngModel)]="mensaje2">
+                <input type="text" class="form-control" id="username" formControlName="username" required pattern="[a-zA-Z]+" maxlength="{a-z}" >
                     <section *ngIf="username?.invalid && (username?.dirty || username?.touched)">
                         <section *ngIf="username?.errors?.['required']" class="alert alert-danger">
                             <p>El username es obligatorio</p>
@@ -35,7 +35,7 @@
             <!--Password-->
             <section class="form-group">
                 <label for="password">Password:</label>
-                <input type="text" class="form-control" id="password" formControlName="password" required pattern="[a-zA-Z]+" maxlength="{a-z}" [(ngModel)]="mensaje3">
+                <input type="text" class="form-control" id="password" formControlName="password" required pattern="[a-zA-Z]+" maxlength="{a-z}" >
                     <section *ngIf="password?.invalid && (password?.dirty || password?.touched)">
                         <section *ngIf="password?.errors?.['required']" class="alert alert-danger">
                             <p>El password es obligatorio</p>
@@ -43,7 +43,7 @@
                     </section>
             </section>
             <section class="form-group sectionBotones">
-                <input type="button" class="btn btn-success" (click)="EnviarMensaje()" value="Log in">
+                <input type="button" class="btn btn-success" (click)="EnviarMensaje()" value="Send">
             </section>
         </form>
     </section>    

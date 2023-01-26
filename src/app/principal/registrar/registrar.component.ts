@@ -64,26 +64,23 @@ export class RegistrarComponent {
     }
 
   // CANDEACTIVATE
-
-  mensaje = "";
-  mensaje1 = "";
-  mensaje2 = "";
-  mensaje3 = "";
+//@D :p
   enviado = false;
 
   EnviarMensaje(){
+    if(this.registroForm.invalid ){
+      return
+    }
     alert('Mensaje: ' + 'Datos enviados correctamente');
     this.enviado = true;
   }
 
-  SalirDeRuta(): Observable<boolean> | boolean{
-    // Cristerio para evitar que el usuario abandone el componente
-
-    // Si mensaje no este vacio o enviado es true
-    if((this.mensaje || this.mensaje1 || this.mensaje2 || this.mensaje3) && this.enviado){
-      return true;
-    }
-    const confirmar = confirm ("Desea abandonar el formulario? \nPerdera todos los datos!!")
-    return confirmar;
+  SalirDeRuta():Observable<boolean> | boolean{
+    // criterios para evitar que el usuario abandone el componente
+    if ((this.firstname?.value !="" || this.lastname?.value !="" || this.username?.value !=""|| this.password?.value !="") &&  !this.enviado) {
+      const confirmar = confirm("¿Desea salir del formulario? \n Perdera todos los datos!!");
+      return confirmar;
+  }
+  return true;
   }
 }
